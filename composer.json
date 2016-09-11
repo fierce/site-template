@@ -1,0 +1,5 @@
+{
+  "require": {
+    "fierce/fierce": "dev-master"
+  }
+}

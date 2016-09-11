@@ -1,0 +1,509 @@
+
+body
+{
+  margin: 0;
+  padding: 0;
+  
+  
+  color: #000;
+  background-color: #fff;
+  
+  font-family: Avenir, Corbel, sans-serif; 
+  font-weight: 400;
+
+  font-size: 15px;
+  line-height: 1.4em;
+    
+  -webkit-text-size-adjust: none; /* prevent font scaling in landscape */
+}
+
+h1
+{
+  margin: 10px 0 20px 0;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+h2
+{
+  margin: 20px 0 10px 0;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+h3
+{
+  margin: 20px 0 10px 0;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+h4
+{
+  margin: 20px 0 10px 0;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+p
+{
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+}
+a:hover, a:active {
+  color: #337ab7;
+}
+
+hr
+{
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+p.message
+{
+  padding: 4px 6px;
+  display: inline-block;
+  background-color: #b1d8ff;
+  border-top: 1px solid #258df6;
+  border-bottom: 1px solid #258df6;
+}
+
+
+ul.nav
+{
+  float: right;
+  margin: 0 5px 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.nav li
+{
+  display: inline-block;
+}
+
+ul.nav li a
+{
+  display: block;
+  color: #fff;
+  padding: 10px;
+}
+
+
+label#nav-toggle-label-1,
+label#nav-toggle-label-2,
+label#nav-toggle-label-3,
+label#nav-toggle-label-4
+{
+  display: none;
+  transition: transform 0.3s, top 0.3s, left 0.3s, opacity 0.3s, width 0.3s;
+}
+
+input#nav-toggle
+{
+  display: none;
+}
+
+#mobile-search-button
+{
+  display: none;
+}
+
+@media screen and (max-width: 690px)
+{
+  body.home form[action=search]
+  {
+    display: none;
+  }
+  
+  #mobile-search-button
+  {
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    right: 55px;
+  }
+
+  label#nav-toggle-label-1,
+  label#nav-toggle-label-2,
+  label#nav-toggle-label-3
+  {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    right: 15px;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 2px solid black;
+  }
+  
+  label#nav-toggle-label-1
+  {
+    top: 12px;
+  }
+  
+  label#nav-toggle-label-2
+  {
+    top: 18px;
+  }
+  
+  label#nav-toggle-label-3
+  {
+    top: 24px;
+  }
+  
+  label#nav-toggle-label-4
+  {
+    position: absolute;
+    
+    display: none;
+    
+    left: 100%;
+    right: auto;
+    top: 40px;
+    bottom: 0;
+    width: 0;
+   
+    opacity: 0;
+    z-index: 10000;
+  }
+  
+  input#nav-toggle:checked ~ label#nav-toggle-label-1
+  {
+    transform: rotate(45deg);
+    top: 18px
+  }
+  
+  input#nav-toggle:checked ~ label#nav-toggle-label-2
+  {
+    opacity: 0;
+  }
+  
+  input#nav-toggle:checked ~ label#nav-toggle-label-3
+  {
+    transform: rotate(-45deg);
+    top: 20px;
+    right: 17px;
+    border: none;
+  }
+  
+  input#nav-toggle:checked ~ label#nav-toggle-label-4
+  {
+    display: block;
+    left: 0;
+    width: 10%;
+  }
+  
+  input#nav-toggle
+  {
+    display: none;
+  }
+  
+  input#nav-toggle:checked ~ ul.nav
+  {
+    left: 10%;
+    box-shadow: 0 10px 20px 10px rgba(0,0,0,0.8);
+  }
+  
+  ul.nav
+  {
+    display: block;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    float: none;
+    margin: 0;
+    top: 40px;
+    left: 100%;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    z-index: 10000;
+    
+    transition: left 0.3s;
+  }
+  
+  ul.nav li
+  {
+    display: block;
+  }
+
+  ul.nav li a
+  {
+    display: block;
+    color: #fff;
+    padding: 10px 10px;
+    background-color: #333333;
+    border-bottom: 1px solid #000;
+  }
+
+}
+
+ul.nav li a:hover, ul.nav li a:active
+{
+  color: rgb(50, 200, 255);
+}
+
+.buttons a, .buttons input[type=submit]
+{
+  padding: 1px 6px 0px 6px;
+  
+  color: #000;
+  background-color: rgb(50, 200, 255);
+  border-radius: 3px;
+  border: 0px;
+  
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+.buttons a:active, .buttons input[type=submit]:active {
+  background-color: #ddd;
+}
+
+table.grid
+{
+  font-family: inherit;
+  font-size: inherity;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+table.grid > tr > td,
+table.grid > thead > tr > th,
+table.grid > tbody > tr > td
+{
+  padding: 6px 5px 3px 5px;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+}
+
+table.grid > thead > tr > th
+{
+  color: #999;
+  margin-bottom: 5px;
+  font-weight: normal;
+  text-align: left;
+}
+
+table.grid > thead > tr > th,
+table.grid > tbody > tr:last-child > td
+{
+  border-color: #000;
+}
+
+table.grid > thead > tr > th.buttons,
+table.grid > tbody > tr > td.buttons
+{
+  text-align: right;
+  width: 200px;
+}
+
+table.grid > tbody > tr > td.buttons a:last-child
+{
+  margin-right: -5px;
+}
+
+table#user_list th.name
+{
+  width: 120px;
+}
+
+table#page_list th.name
+{
+  width: 200px;
+}
+
+form.medium
+{
+  display: inline-block;
+  text-align: left;
+  border-top: 1px solid #000;
+}
+
+form.medium > h2:first-child
+{
+  margin-top: 10px;
+}
+
+form > div.row
+{
+  margin: 10px 0;
+}
+
+form > div.row:first-child
+{
+  margin-top: 17px;
+}
+
+@media screen and (max-width: 600px)
+{
+  form > div.row > span.row-inline
+  {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+form > div.row > label, form > div.row > span.row-inline > label
+{
+  margin: 0 10px 0 0;
+  display: inline-block;
+  width: 160px;
+  color: #999;
+}
+
+@media screen and (max-width: 600px)
+{
+  form > div.row > label, form > div.row > span.row-inline > label
+  {
+    display: block;
+    margin: 5px 0;
+    text-align: left;
+  }
+}
+
+
+form > div.row input[type=text], form > div.row input[type=password]
+{
+  font-family: inherit;
+  font-size: inherit;
+  
+  border: 1px solid #aaa;
+  padding: 2px 4px;
+  
+  width: 200px;
+  
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+form > div.row input.large[type=text]
+{
+  width: 385px;
+}
+
+@media screen and (max-width: 600px)
+{
+  form > div.row input.large[type=text]
+  {
+    width: 100%;
+  }
+}
+
+
+form > div.row input.num[type=text]
+{
+  width: 50px;
+}
+
+form > div.row select
+{
+  border: 1px solid #aaa;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+form > div.row textarea
+{
+  vertical-align: top;
+  font-famly: inherit;
+  font-size: inherit;
+  width: 280px;
+  height: 70px;
+  border: 1px solid #aaa;
+}
+
+form > div.row textarea.large
+{
+  width: 370px;
+  height: 300px;
+}
+
+form > div.row textarea.full
+{
+  width: 100%;
+  height: 500px;
+}
+
+form > div.row textarea.wysiwyg
+{
+  font-family: monospace;
+  font-size: 12px;
+  width: 515px;
+  height: 500px;
+  padding: 5px;
+}
+
+form > div.row div.wysiwyg-editor
+{
+  display: inline-block;
+  vertical-align: top;
+  font-famly: inherit;
+  font-size: inherit;
+  width: 515px;
+  margin-left: 10px;
+  height: 500px;
+  border: 1px solid #aaa;
+  overflow: auto;
+  padding: 5px;
+}
+
+form > div.row span.note
+{
+  padding-top: 4px;
+  padding-left: 10px;
+  position: absolute;
+  color: #999;
+  font-size: 13px;
+}
+
+form > div.row span.note:before
+{
+  content: '(';
+}
+form > div.row span.note:after
+{
+  content: ')';
+}
+
+form > div.buttons
+{
+  margin: 40px 0 20px 173px;
+}
+
+@media screen and (max-width: 600px)
+{
+  form > div.buttons
+  {
+    margin-left: 0;
+  }
+}
+
+
+form > div.buttons input[type=submit]
+{
+  border-color: #003db6;
+  
+  color: #fff;
+  
+  background-color: #258df6;
+  
+}
+form > div.buttons input[type=submit]:active {
+  background-color: #003db6;
+}
+
+#content
+{
+  margin: 0 10px;
+}
